@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Love Test</title>
+  <style>
+    body {
+      background-color: #f7f7f7;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    #answer {
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    #response {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dono you loveee me?</h1>
+  <form onsubmit="return checkAnswer()">
+    <input type="text" id="answer" />
+    <input type="submit" value="Submit" />
+  </form>
+
+  <p id="response"></p>
+
+  <audio controls>
+    <source src="stars.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function checkAnswer() {
+      var userInput = document.getElementById("answer").value.toLowerCase();
+
+      if (userInput === "yes") {
+        document.getElementById("response").innerHTML = "Lin &#10084;&#65039; Shiv";
+      } else if (userInput === "no") {
+        document.getElementById("response").innerHTML = "The answer is not acceptable.";
+      } else {
+        document.getElementById("response").innerHTML = "Please enter a valid response (yes/no).";
+      }
+
+      // Prevent form submission and page refresh
+      return false;
+    }
+  </script>
+</body>
+</html>
